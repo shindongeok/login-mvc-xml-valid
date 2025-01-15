@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="kr.bit.mapper.MemberMapper">
+    <select id="memberDoubleCheck" resultType="kr.bit.entity.Member">
+        select *from member where id=#{id}
+    </select>
+<!--    회원가입-->
+    <insert id="joinInsert" parameterType="kr.bit.entity.Member">
+        INSERT INTO member (id, pwd1, pwd2, name, gender, email, birth, zipcode, address, hobby, job)
+        VALUES (#{id}, #{pwd1}, #{pwd2}, #{name}, #{gender}, #{email}, #{birth}, #{zipcode}, #{address}, #{hobby}, #{job})
+    </insert>
+
+    <select id="memberList" resultType="kr.bit.entity.Member">
+        select * from member
+    </select>
+</mapper>
