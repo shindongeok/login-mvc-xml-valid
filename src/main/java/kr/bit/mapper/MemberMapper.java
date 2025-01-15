@@ -16,4 +16,7 @@ public interface MemberMapper {
 
     //회원들 리스트
     public List<Member> memberList();
+
+    //로그인
+//    public Member login(String id, String pwd1);
 }

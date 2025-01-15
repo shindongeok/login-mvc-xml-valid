@@ -8,6 +8,6 @@ public class HomeController {
 
     @RequestMapping("/")
     public String home(){
-        return "redirect:/member/join";
+        return "redirect:/member/main";
     }
 }

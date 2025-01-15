@@ -14,4 +14,8 @@
     <select id="memberList" resultType="kr.bit.entity.Member">
         select * from member
     </select>
+
+<!--    <select id="login" resultType="kr.bit.entity.Member">-->
+<!--        SELECT id, pwd1 FROM member WHERE id = #{id} AND pwd1 = #{pwd1}-->
+<!--    </select>-->
 </mapper>

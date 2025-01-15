@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
 import java.util.List;
 
@@ -18,9 +17,38 @@ public class MemberController {
     @Autowired
     private MemberMapper memberMapper;
 
-    @RequestMapping("join")
+
+    @RequestMapping("/main")
     public String main(){
+        return "main";
+    }
+
+
+    @GetMapping("join")
+    public String join(){
         return "join";
+    }
+
+//    @PostMapping("/login")
+//    public String login(String id, String pw, Model model, HttpSession session){
+//        // 서비스에서 로그인 처리
+//        Member member = memberMapper.login(id, pw);
+//
+//        if (member != null && member.getPwd1().equals(pw)) { // 비밀번호 비교
+//            // 로그인 성공 시, 세션에 사용자 정보 저장
+//            session.setAttribute("loggedInMember", member);
+//            return "memberList";  // 로그인 성공 후 리다이렉트 (예: 홈 페이지)
+//        } else {
+//            // 로그인 실패 시
+//            model.addAttribute("error", "아이디나 비밀번호가 틀렸습니다.");
+//            return "main";  // 로그인 페이지로 돌아감
+//        }
+//    }
+
+
+    @GetMapping("/error")
+    public String error(){
+        return "error";
     }
 
 
@@ -45,6 +73,11 @@ public class MemberController {
         model.addAttribute("list",list);
         return "memberList";
     }
+
+
+
+
+
 
 
 
